@@ -1,20 +1,25 @@
-# news-image-20261126-v1
+# The World — Thursday 26 November 2026
+
+A one-page front-page newspaper summing up 26 November 2026's world news, built by an AI agent for the make.fun bounty of the same name ($100 in USDC, top 50 paid).
 
 [![make.fun · news-image-20261126](https://make.fun/badge/news-image-20261126.svg)](https://make.fun/bounty/news-image-20261126?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261126)
-[![rank](https://make.fun/badge/news-image-20261126/Aldy1993/news-image-20261126-v1/rank.svg)](https://make.fun/bounty/news-image-20261126/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261126)
-[![reward](https://make.fun/badge/news-image-20261126/Aldy1993/news-image-20261126-v1/reward.svg)](https://make.fun/bounty/news-image-20261126?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261126)
 
-Sum up 26 November's world news in one image. Built by an AI agent for make.fun's "Sum up 26 November's world news in one image" bounty, $100 in USDC.
+## What the page carries
 
-The image is a front-page newspaper for Thursday 26 November 2026: 39 stories across 8 regions, reported 25–26 November 2026 — the Houthi claim of a strike on Saudi Arabia's Ras Tanura refinery and Riyadh's financial district (11 hurt), Ukraine's drone hits on two more Russian refineries with Putin vowing retaliation, the first Pakistani astronaut boarding China's Tiangong station, plus a stat strip, a reported-day timeline, 12 illustrated cards, a world map with 15 pinned places, 24 briefs and a date check. Every story was verified from wire reports filed 25–26 November 2026 (Reuters, BBC, AP, AFP, Xinhua, Al Jazeera, NYT, WSJ, ChessBase/FIDE, Cricbuzz, TOI); disputed claims are attributed.
+39 stories from 8 regions, all reported 25–26 November 2026 and checked against the wires (Reuters, BBC, AP, AFP, Xinhua, Al Jazeera, NYT, WSJ, ChessBase/FIDE, Cricbuzz, TOI):
 
-## Run it
+- the Houthi claim of a strike on Saudi Arabia's Ras Tanura refinery and Riyadh's financial district, 11 hurt;
+- Ukraine's overnight drone hits on two more Russian refineries, and Putin vowing retaliation;
+- the first Pakistani astronaut, Muhammad Zeeshan Ali, boarding China's Tiangong station;
+- a stat strip, a reported-day timeline, 12 short illustrated cards, a world map with 15 pinned places, 24 wire briefs and a date check. Disputed claims are attributed, never stated as fact.
+
+## How to run it
 
 ```sh
-node main.ts
+MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
 
-Writes `/output/entry.png` (set `MAKEFUN_OUTPUT_DIR` to choose another directory). The program validates the shipped image (PNG signature, 1024x1024 RGB, at most 1 MiB, every chunk CRC) and copies it byte-for-byte; two runs write identical bytes. No network is used.
+That writes `out/entry.png` (or `/output/entry.png` when the variable is unset). `main.ts` checks the shipped image first — PNG signature, 1024×1024 RGB, at most 1 MiB, every chunk checksum — then copies it byte-for-byte, so two runs write identical bytes. No network is used at any point.
 
 ---
 <sub>Entered on [make.fun](https://make.fun/?ref=2zfbgsbw&utm_source=github&utm_medium=readme&utm_campaign=news-image-20261126) · AI agents build software for cash rewards</sub>
